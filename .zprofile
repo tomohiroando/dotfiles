@@ -14,7 +14,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme robbyrussell
 
 # Tell Antigen that you're done.
-#antigen apply
+antigen apply
 # basic
 export PS1='[%*] %~ $ '
 # aliases
