@@ -18,6 +18,8 @@ alias md="mkdir"
 function mkdircd { mkdir -p "$@" && eval cd "\"\$$#\""; }
 alias mc="mkdircd"
 alias h="history-all"
+alias vim="nvim"
+alias v="vim"
 function history-all { history -E 1 }
 
 # Detect which `ls` flavor is in use
