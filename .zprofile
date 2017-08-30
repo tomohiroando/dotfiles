@@ -1,5 +1,5 @@
 # Antigen
-source $HOME/.antigen.sh
+source $HOME/antigen.sh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle heroku
