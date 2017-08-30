@@ -13,4 +13,4 @@ do
 
     lnif $PWD/$f $HOME/$f
 done
-
+lnif $PWD/antigen.sh $HOME/antigen.sh
