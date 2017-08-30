@@ -15,8 +15,6 @@ antigen theme robbyrussell
 
 # Tell Antigen that you're done.
 antigen apply
-# basic
-export PS1='[%*] %~ $ '
 # aliases
 source "$HOME/.aliases"
 # rbenv
