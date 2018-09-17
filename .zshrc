@@ -1,6 +1,21 @@
 # 環境変数
 export LANG=ja_JP.UTF-8
 
+export PATH=/usr/local/sbin:$PATH # for Homebrew
+export PATH=/usr/local/bin:$PATH  # for Homebrew
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+autoload -U compinit
+compinit
+
+# sublimeを開くエイリアス
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
@@ -138,3 +153,35 @@ case ${OSTYPE} in
 esac
 
 # vim:set ft=zsh:
+
+source ~/.zplug/init.zsh
+
+
+zplug "peterhurford/git-it-on.zsh"
+zplug "zsh-users/zsh-completions"
+zplug "plugins/git",   from:oh-my-zsh
+zplug "rupa/z", use:"*.sh"
+zplug "b4b4r07/enhancd", use:init.sh
+zplug "tcnksm/docker-alias", use:zshrc
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "mrowa44/emojify", as:command
+setopt prompt_subst
+zplug "caiogondim/bullet-train.zsh", use:bullet-train.zsh-theme, defer:3
+zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
+zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
+zplug "peco/peco", as:command, from:gh-r, use:"*amd64*"
+zplug "b4b4r07/dotfiles", as:command, use:bin/peco-tmux
+zplug "supercrabtree/k"
+
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+
+
+
+
+zplug load --verbose
+setopt nonomatch
